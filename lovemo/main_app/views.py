@@ -9,6 +9,7 @@ def index(request) :
 
 def transaction(request, id) :
     '''View for more detailed transaction'''
-    transactions = Transaction.objects.get(id= id)
+    transaction = Transactions.objects.get(id= id)
+    comments = transaction.comments_set.all()
 
-    return render(request, 'main_app/transaction.html')
+    return render(request, 'main_app/transaction.html', {'transaction':transaction, 'comments':comments})
