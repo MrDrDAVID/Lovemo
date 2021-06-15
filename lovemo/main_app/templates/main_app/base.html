@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1,
+        shrink-to-fit=no">
+        <link href="{% static 'styles/style.css' %}" rel="stylesheet">
+        <title>{% block title %}Lovemo{% endblock %}</title>
+    </head>
+
+    <header id="header">
+          <nav id="nav-bar">
+            <a href="/home">
+                <img id="header-image" src="{% static 'images/lovemo-logo.png' %}" alt="lovemo-logo" height="100px" width="100px">
+            </a>
+          </nav>
+    </header>
+
+    <body>
+        <div id="content" name="content">
+            {% block content %}{% endblock %}
+        </div>
+    </body>
+</html>

@@ -1,0 +1,9 @@
+{% extends 'main_app/base.html' %}
+
+{% block content %}
+    <ul>
+        {% for transaction in transactions %} 
+            <li>{{transaction}}</li>
+        {% endfor %}
+    </ul>
+{% endblock %} 

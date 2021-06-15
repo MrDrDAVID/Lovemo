@@ -1,0 +1,19 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 75px;
+    padding: 0px 20px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(253, 75, 75, 0.808);
+    width: 100%;
+}
+
+body {
+    background-color: whitesmoke;
+    margin-top: 125px;
+}
