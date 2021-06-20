@@ -17,3 +17,9 @@ def transaction(request, id) :
     comments = transaction.comments_set.all()
 
     return render(request, 'main_app/transaction.html', {'transaction':transaction, 'comments':comments})
+
+def create_transaction(request) :
+    '''Creating a new transaction'''
+    
+
+    return render()
