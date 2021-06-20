@@ -8,6 +8,10 @@ class Lovies(models.Model) :
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     lovie_bank = models.IntegerField(default=1000)
 
+class Boo(models.Model) :
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    boo = models.CharField(max_length=30)
+
 class Transactions(models.Model) :
     payment_from = models.CharField(max_length=30, blank=False)
     payment_to = models.CharField(max_length=30, blank=False)

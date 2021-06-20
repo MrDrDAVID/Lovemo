@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.models import User
-from main_app.models import Transactions, EarnLoviesOrBuy, Comments, Lovies
+from main_app.models import Transactions, EarnLoviesOrBuy, Comments, Lovies, Boo
 
 # Register your models here.
 admin.site.register(Transactions)
@@ -13,8 +13,13 @@ class LovieInline(admin.StackedInline) :
     can_delete = False
     verbose_name_plural = 'Lovie'
 
+class BooInline(admin.StackedInline) :
+    model = Boo
+    can_delete = False
+    verbose_name_plural = 'Boo'
+
 class UserAdmin(BaseUserAdmin):
-    inlines = (LovieInline, )
+    inlines = (LovieInline,BooInline, )
 
 admin.site.unregister(User)
 admin.site.register(User, UserAdmin)
