@@ -7,6 +7,10 @@ def index(request) :
 
     return render(request, 'main_app/index.html', {'transactions': transactions})
 
+def about(request) :
+    '''The about page'''
+    return render(request, 'main_app/about.html')
+
 def transaction(request, id) :
     '''View for more detailed transaction'''
     transaction = Transactions.objects.get(id= id)
