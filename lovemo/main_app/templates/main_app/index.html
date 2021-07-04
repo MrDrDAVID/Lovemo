@@ -3,7 +3,12 @@
 {% block content %}
         <div id="transactions" name="transactions">
             {% for transaction in transactions %} 
-                <a href="/{{transaction.id}}"><h3>{{transaction}}</h3></a>
+                <a href="/{{transaction.id}}"><h3>{{transaction}} for</h3></a>
+                {% if transaction.payment_for|length > 20 %}
+                    <p>{{transaction.payment_for[:5]}}</p>
+                {% else %}
+                    <p>{{transaction.payment_for}}</p> 
+                {% endif %} 
             {% endfor %}
         </div>
 {% endblock %} 

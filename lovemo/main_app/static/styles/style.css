@@ -15,6 +15,29 @@ header {
     opacity: 90%;
 }
 
+a {
+    text-decoration: none;
+    background-color: transparent;
+    color: black;
+}
+
+a:link {
+    text-decoration: none;
+    background-color: transparent;
+    color: black;
+}
+
+a:hover {
+    color: white;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+a:visited {
+    text-decoration: none;
+    background-color: transparent;
+}
+
 body {
     background-color: whitesmoke;
     margin-top: 100px;
