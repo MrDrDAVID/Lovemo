@@ -1,7 +1,9 @@
 {% extends 'main_app/base.html' %}
 
 {% block content %}
-        {% for transaction in transactions %} 
-            <a href="/{{transaction.id}}"><h3>{{transaction}}</h3></a>
-        {% endfor %}
+        <div id="transactions" name="transactions">
+            {% for transaction in transactions %} 
+                <a href="/{{transaction.id}}"><h3>{{transaction}}</h3></a>
+            {% endfor %}
+        </div>
 {% endblock %} 

@@ -18,4 +18,32 @@ header {
 body {
     background-color: whitesmoke;
     margin-top: 100px;
+    text-align: center;
+}
+
+#content {
+    font-size: larger;
+    display: inline-block;
+    text-align: left;
+}
+
+#transactions {
+    background-color: lightgrey;
+    padding-left: 12em;
+    padding-right: 12em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    border-radius: 2rem;
+}
+
+footer {
+    position: fixed;  
+    left: 0px;  
+    bottom: 0px;  
+    right: 10px;   
+    width: 100%;  
+    background-color: rgba(253, 75, 75, 0.808);
+    color: white;  
+    text-align: center;  
+    opacity: 90%;
 }

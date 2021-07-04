@@ -5,9 +5,11 @@
 {% endblock %}
 
 {% block content %} 
-    <h1>{{transaction}}</h1>
-    {% for comment in comments %} 
-        <h3>{{comment}}</h3>
-    {% endfor %} 
-    <p>{{transaction.date_of_transaction}}</p>
+    <div id="comments" name="comments">
+        <h1>{{transaction}}</h1>
+        {% for comment in comments %} 
+            <h3>{{comment}}</h3>
+        {% endfor %} 
+        <p>{{transaction.date_of_transaction}}</p>
+    </div>
 {% endblock %} 

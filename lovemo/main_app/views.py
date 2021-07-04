@@ -22,4 +22,4 @@ def create_transaction(request) :
     '''Creating a new transaction'''
     
 
-    return render()
+    return render(request, 'main_app/create_transaction', )
