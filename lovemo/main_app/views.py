@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Transactions, EarnLoviesOrBuy, Boo
+from .forms import SendLovies
 
 # Create your views here.
 def index(request) :
@@ -21,6 +22,6 @@ def transaction(request, id) :
 
 def create_transaction(request) :
     '''Creating a new transaction'''
-    
+    lovie_form = SendLovies()
 
-    return render(request, 'main_app/create_transaction', )
+    return render(request, 'main_app/create_transaction.html', {'form': lovie_form})

@@ -3,8 +3,11 @@
 {% block title %}Send Lovies{% endblock %}
 
 {% block content %} 
-    <h2>Pay</h2>
+    <h1>Send Lovies</h1>
     <div id="payment" name="payment">
-
+        <form method="POST" action="create_transaction/">
+            {{form.as_p}}
+            <button type="submit" name="send">send lovies</button>
+        </form>
     </div>
 {% endblock %}
