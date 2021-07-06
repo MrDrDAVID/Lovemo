@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect
 from .models import Transactions, EarnLoviesOrBuy, Boo
-from .forms import SendLovies
+from .forms import SendLovies, NewComment
 
 # Create your views here.
 def index(request) :
@@ -18,8 +18,9 @@ def transaction(request, id) :
     '''View for more detailed transaction'''
     transaction = Transactions.objects.get(id=id)
     comments = transaction.comments_set.all()
+    new_comment = NewComment()
 
-    return render(request, 'main_app/transaction.html', {'transaction':transaction, 'comments':comments})
+    return render(request, 'main_app/transaction.html', {'transaction':transaction, 'comments':comments, 'form':new_comment})
 
 def create_transaction(request) :
     '''Creating a new transaction'''

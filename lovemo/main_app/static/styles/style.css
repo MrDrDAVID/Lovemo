@@ -70,3 +70,21 @@ footer {
     text-align: center;  
     opacity: 90%;
 }
+
+#send-lovies-btn {
+    margin-top: 10px;
+    margin-left: 330px;
+    padding: 20px 60px;
+    background-color: rgba(253, 75, 75, 0.808);
+    display: inline-block;
+    border-radius: 12px;
+    color: white;
+}
+
+#send-lovies-btn:hover {
+    background-color: rgb(250, 49, 49);
+    color:white;
+    -webkit-transform: scale(.9);
+    -ms-transform: scale(.9);
+    transform: scale(.9);
+}

@@ -21,7 +21,7 @@ class Transactions(models.Model) :
     likes = models.IntegerField(default=0)
 
     def __str__(self) :
-        formatted_str = self.payment_from + ' paid ' + self.payment_to + f' {self.amount_payed} lovies'
+        formatted_str = self.payment_from + ' paid ' + self.payment_to + ' {:,} lovies'.format(self.amount_payed)
         return formatted_str
 
     class Meta :
