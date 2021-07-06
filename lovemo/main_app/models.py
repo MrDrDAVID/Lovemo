@@ -32,7 +32,7 @@ class Comments(models.Model) :
     transaction = models.ForeignKey(Transactions, on_delete=models.CASCADE)
     commentor = models.CharField(max_length=30)
     description = models.TextField(max_length=500)
-    likes = models.IntegerField(default=0)
+    likes = models.IntegerField(default=0, null=True)
 
     def __str__(self):
         if len(self.description) > 100 :

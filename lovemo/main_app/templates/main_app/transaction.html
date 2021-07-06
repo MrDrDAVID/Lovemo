@@ -12,6 +12,10 @@
             <h3>{{comment}}</h3>
         {% endfor %} 
         <p>{{transaction.date_of_transaction}}</p>
-        <form method="POST" action="/transaction/"
+        <form method="POST" action="/{{transaction.id}}/">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit">post comment</button>
+        </form>
     </div>
 {% endblock %} 

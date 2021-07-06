@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect
-from .models import Transactions, EarnLoviesOrBuy, Boo
+from .models import Transactions, EarnLoviesOrBuy, Boo, Comments
 from .forms import SendLovies, NewComment
 
 # Create your views here.
@@ -18,7 +18,19 @@ def transaction(request, id) :
     '''View for more detailed transaction'''
     transaction = Transactions.objects.get(id=id)
     comments = transaction.comments_set.all()
-    new_comment = NewComment()
+
+    if request.method == 'POST' :
+        new_comment = NewComment(request.POST)
+
+        if new_comment.is_valid() :
+            comment = new_comment.cleaned_data['comment']
+            transaction.comments_set.create(transaction=transaction, commentor='boo', description=comment)
+            transaction.save()
+
+            return HttpResponseRedirect('/%i' %transaction.id)
+
+    else :
+        new_comment = NewComment()
 
     return render(request, 'main_app/transaction.html', {'transaction':transaction, 'comments':comments, 'form':new_comment})
 

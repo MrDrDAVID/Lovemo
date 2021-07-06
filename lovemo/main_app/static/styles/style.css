@@ -60,10 +60,17 @@ body {
 }
 
 footer {
-    position: fixed;  
-    left: 0px;  
+    width: 100%;
+    margin-left: 0%;
+    margin-right: 0%;
+}
+
+#footer {
+    position: relative;  
+    padding-top: 5px;
+    padding-bottom: 5px;
+    top: 10px;
     bottom: 0px;  
-    right: 10px;   
     width: 100%;  
     background-color: rgba(253, 75, 75, 0.808);
     color: white;  
