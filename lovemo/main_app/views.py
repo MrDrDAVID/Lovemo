@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.http import HttpResponseRedirect
 from .models import Transactions, EarnLoviesOrBuy, Boo
 from .forms import SendLovies
 
@@ -22,6 +23,18 @@ def transaction(request, id) :
 
 def create_transaction(request) :
     '''Creating a new transaction'''
-    lovie_form = SendLovies()
+    if request.method == 'POST' :
+        lovie_form = SendLovies(request.POST)
+
+        if lovie_form.is_valid() :
+            pay_to = lovie_form.cleaned_data['payment_to']
+            amount = lovie_form.cleaned_data['amount_paid']
+            pay_for = lovie_form.cleaned_data['payment_for']
+            new_transaction = Transactions(payment_from='you', payment_to=pay_to, payment_for=pay_for, amount_payed=amount)
+            new_transaction.save()
+
+            return HttpResponseRedirect('/home')
+    else :
+        lovie_form = SendLovies()
 
     return render(request, 'main_app/create_transaction.html', {'form': lovie_form})

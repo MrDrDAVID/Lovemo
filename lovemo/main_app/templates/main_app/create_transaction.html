@@ -5,7 +5,8 @@
 {% block content %} 
     <h1>Send Lovies</h1>
     <div id="payment" name="payment">
-        <form method="POST" action="create_transaction/">
+        <form method="POST" action="/create_transaction/">
+            {% csrf_token %}
             {{form.as_p}}
             <button type="submit" name="send">send lovies</button>
         </form>
