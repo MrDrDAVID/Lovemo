@@ -3,17 +3,21 @@
 {% block content %}
         <div id="transactions" name="transactions">
             <h2>Transactions</h2>
-            {% for transaction in transactions %} 
-                <div id="transaction-card">
-                    <a href="/{{transaction.id}}"><h3>{{transaction}} for</h3></a>
-                    {% if transaction.payment_for|length > 150 %}
-                        <p>{{transaction.payment_for|slice:'150'}}</p>
-                    {% else %}
-                        <p>{{transaction.payment_for}}</p> 
-                    {% endif %} 
-                    <hr width="100%" align="LEFT">
-                </div>
-            {% endfor %}
+            {% if transactions %}
+                {% for transaction in transactions %} 
+                    <div id="transaction-card">
+                        <a href="/{{transaction.id}}"><h3>{{transaction}} for</h3></a>
+                        {% if transaction.payment_for|length > 150 %}
+                            <p>{{transaction.payment_for|slice:'150'}}</p>
+                        {% else %}
+                            <p>{{transaction.payment_for}}</p> 
+                        {% endif %} 
+                        <hr width="100%" align="LEFT">
+                    </div>
+                {% endfor %}
+            {% else %} 
+                <h2>no transactions</h2>
+            {% endif %}
         </div>
         <a href="/create_transaction"><button id="send-lovies-btn">Send Lovies</button></a>
 {% endblock %} 
