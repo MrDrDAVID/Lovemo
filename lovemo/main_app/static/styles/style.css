@@ -40,52 +40,46 @@ a:visited {
 
 body {
     background-color: whitesmoke;
-    margin-top: 100px;
+    margin-top: 95px;
     text-align: center;
 }
 
 #content {
     font-size: larger;
     display: inline-block;
-    text-align: left;
 }
 
 #transactions {
+    text-align: center;
     background-color: lightgrey;
-    padding-left: 12em;
-    padding-right: 12em;
-    padding-top: 2em;
-    padding-bottom: 2em;
+    padding: 0 100px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     border-radius: 2rem;
 }
 
-footer {
-    width: 100%;
-    margin-left: 0%;
-    margin-right: 0%;
+#transactions a {
+    text-align: left;
 }
 
-#footer {
-    position: relative;  
-    padding-top: 5px;
-    padding-bottom: 5px;
-    top: 10px;
+footer {  
+    position: fixed;
     bottom: 0px;  
+    left: 0px;
     width: 100%;  
     background-color: rgba(253, 75, 75, 0.808);
     color: white;  
     text-align: center;  
-    opacity: 90%;
 }
 
 #send-lovies-btn {
     margin-top: 10px;
-    margin-left: 330px;
     padding: 20px 60px;
     background-color: rgba(253, 75, 75, 0.808);
     display: inline-block;
     border-radius: 12px;
     color: white;
+    margin-bottom: 50px;
 }
 
 #send-lovies-btn:hover {
