@@ -7,8 +7,9 @@ from .forms import SendLovies, NewComment
 def index(request) :
     '''The Lovemo homepage'''
     transactions = Transactions.objects.all()
+    earns_and_buys = EarnLoviesOrBuy.objects.all()
 
-    return render(request, 'main_app/index.html', {'transactions': transactions})
+    return render(request, 'main_app/index.html', {'transactions': transactions, 'earns_buys': earns_and_buys})
 
 def about(request) :
     '''The about page'''
