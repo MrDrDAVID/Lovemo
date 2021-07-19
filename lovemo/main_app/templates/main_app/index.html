@@ -6,7 +6,11 @@
             {% if transactions %}
                 {% for transaction in transactions %} 
                     <div id="transaction-card">
-                        <a href="/{{transaction.id}}"><h3>{{transaction}} for</h3></a>
+                        {% if transaction.payment_for %} 
+                            <a href="/{{transaction.id}}"><h3>{{transaction}} for</h3></a>
+                        {% else %} 
+                            <a href="/{{transaction.id}}"><h3>{{transaction}}</h3></a>
+                        {% endif %}
                         {% if transaction.payment_for|length > 150 %}
                             <p>{{transaction.payment_for|slice:'150'}}</p>
                         {% else %}
