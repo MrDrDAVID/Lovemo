@@ -70,6 +70,7 @@ footer {
     background-color: rgb(248, 99, 99);
     color: white;  
     text-align: center;  
+    white-space: nowrap;
 }
 
 #send-lovies-btn {

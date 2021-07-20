@@ -15,6 +15,10 @@ def about(request) :
     '''The about page'''
     return render(request, 'main_app/about.html')
 
+def creators(request) :
+    '''The about page'''
+    return render(request, 'main_app/boo_doc.html')
+
 def transaction(request, id) :
     '''View for more detailed transaction'''
     transaction = Transactions.objects.get(id=id)
