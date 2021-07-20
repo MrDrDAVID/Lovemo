@@ -6,4 +6,6 @@ from django.contrib.auth.forms import UserCreationForm
 # Create your views here.
 def register(request) :
     '''Lovemo user creation'''
-    return render(request, 'register/register.html')
+    reg_form = UserCreationForm()
+    
+    return render(request, 'register/register.html', {'form': reg_form})
