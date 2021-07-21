@@ -4,6 +4,8 @@
     Lovemo Transaction 
 {% endblock %}
 
+{% load crispy_forms_tags %}
+
 {% block content %} 
     <div id="comments" name="comments">
         <h1>{{transaction}}</h1>
@@ -14,7 +16,7 @@
         <p>{{transaction.date_of_transaction}}</p>
         <form method="POST" action="/{{transaction.id}}/">
             {% csrf_token %}
-            {{form.as_p}}
+            {{form|crispy}}
             <button type="submit">post comment</button>
         </form>
     </div>

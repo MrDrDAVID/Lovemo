@@ -45,9 +45,9 @@ def create_transaction(request) :
         lovie_form = SendLovies(request.POST)
 
         if lovie_form.is_valid() :
-            pay_to = lovie_form.cleaned_data['payment_to']
-            amount = lovie_form.cleaned_data['amount_paid']
-            pay_for = lovie_form.cleaned_data['payment_for']
+            pay_to = lovie_form.cleaned_data['to']
+            amount = lovie_form.cleaned_data['amount']
+            pay_for = lovie_form.cleaned_data['description']
             new_transaction = Transactions(payment_from='you', payment_to=pay_to, payment_for=pay_for, amount_payed=amount)
             new_transaction.save()
 

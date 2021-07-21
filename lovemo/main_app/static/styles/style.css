@@ -102,3 +102,7 @@ footer a {
     -ms-transform: scale(.9);
     transform: scale(.9);
 }
+
+.form-group {
+    text-align: left;
+}

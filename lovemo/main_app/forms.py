@@ -1,9 +1,9 @@
 from django import forms
 
 class SendLovies(forms.Form) :
-    payment_to = forms.CharField(label='to', max_length=30)
-    amount_paid = forms.IntegerField(label='amount')
-    payment_for = forms.CharField(label='for', widget=forms.Textarea())
+    to = forms.CharField(max_length=30)
+    amount = forms.IntegerField()
+    description = forms.CharField(widget=forms.Textarea())
 
 class NewComment(forms.Form) :
     comment = forms.CharField(label='New comment', widget=forms.Textarea())
