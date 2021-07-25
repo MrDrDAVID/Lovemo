@@ -10,11 +10,14 @@
     </head>
 
     <header id="header">
-          <nav id="nav-bar">
-            <a href="/home">
-                <img id="header-image" src="{% static 'images/lovemo-logo.png' %}" alt="lovemo-logo" height="50px" width="75px">
-            </a>
-          </nav>
+        <div id="header-nav">
+            <nav id="nav-bar">
+                <a href="/home" id="home-logo">
+                    <img style="vertical-align: middle; margin-right: 1325px;" id="header-image" src="{% static 'images/lovemo-logo.png' %}" alt="lovemo-logo" height="50px" width="75px">
+                </a>
+                <a href="/login" id="login-link" style="color: white;">Login</a>
+              </nav>
+        </div>
     </header>
 
     <body>
