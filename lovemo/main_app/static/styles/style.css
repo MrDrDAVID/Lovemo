@@ -106,3 +106,7 @@ footer a {
 .form-group {
     text-align: left;
 }
+
+#reg-link:hover {
+    color: rgb(248, 99, 99);
+}

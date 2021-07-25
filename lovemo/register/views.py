@@ -24,7 +24,7 @@ def register(request) :
             bank.user = new_user
             new_user.lovies.save()
 
-            return HttpResponseRedirect('/home')
+            return HttpResponseRedirect('/login')
 
     else :
         reg_form = RegisterForm()
