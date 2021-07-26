@@ -1,6 +1,7 @@
 {% extends 'main_app/base.html' %}
 
 {% block content %}
+    {% if user.is_authenticated %}
         <div id="transactions" name="transactions">
             <h2>Transactions</h2>
             {% if transactions %}
@@ -24,4 +25,7 @@
             {% endif %}
         </div>
         <a href="/create_transaction"><button id="send-lovies-btn">Send Lovies</button></a>
+    {% else %} 
+        <h1 id="not-logged-in">You need to log in to see your lovies</h1>
+    {% endif %} 
 {% endblock %} 

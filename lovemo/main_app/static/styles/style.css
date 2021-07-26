@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
 header {
     position: fixed;
     top: 0;
@@ -107,4 +110,9 @@ footer a {
 
 #home-logo:hover {
     text-decoration: none;
+}
+
+#not-logged-in {
+    margin-top: 250px;
+    font-family: 'Indie Flower', Arial, Helvetica, sans-serif;
 }

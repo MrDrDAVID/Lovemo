@@ -7,17 +7,21 @@
 {% load crispy_forms_tags %}
 
 {% block content %} 
-    <div id="comments" name="comments">
-        <h1>{{transaction}}</h1>
-        <h2>{{transaction.payment_for}}</h2>
-        {% for comment in comments %} 
-            <h3>{{comment}}</h3>
-        {% endfor %} 
-        <p>{{transaction.date_of_transaction}}</p>
-        <form method="POST" action="/{{transaction.id}}/">
-            {% csrf_token %}
-            {{form|crispy}}
-            <button type="submit">post comment</button>
-        </form>
-    </div>
-{% endblock %} 
+    {% if user.is_authenticated %} 
+        <div id="comments" name="comments">
+            <h1>{{transaction}}</h1>
+            <h2>{{transaction.payment_for}}</h2>
+            {% for comment in comments %} 
+                <h3>{{comment}}</h3>
+            {% endfor %} 
+            <p>{{transaction.date_of_transaction}}</p>
+            <form method="POST" action="/{{transaction.id}}/">
+                {% csrf_token %}
+                {{form|crispy}}
+                <button type="submit">post comment</button>
+            </form>
+        </div>
+    {% else %} 
+        <h1>You need to log in to see your lovies</h1>
+    {% endif %}
+{% endblock %}

@@ -4,12 +4,16 @@
 {% load crispy_forms_tags %}
 
 {% block content %} 
-    <h1>Send Lovies</h1>
-    <div id="payment" name="payment">
-        <form method="POST" action="/create_transaction/">
-            {% csrf_token %}
-            {{form|crispy}}
-            <button type="submit" name="send">send lovies</button>
-        </form>
-    </div>
+    {% if user.is_authenticated %} 
+        <h1>Send Lovies</h1>
+        <div id="payment" name="payment">
+            <form method="POST" action="/create_transaction/">
+                {% csrf_token %}
+                {{form|crispy}}
+                <button type="submit" name="send">send lovies</button>
+            </form>
+        </div>
+    {% else %} 
+        <h1>You need to log in to send lovies</h1>
+    {% endif %} 
 {% endblock %}
