@@ -116,3 +116,8 @@ footer a {
     margin-top: 250px;
     font-family: 'Indie Flower', Arial, Helvetica, sans-serif;
 }
+
+#user-name:hover {
+    text-decoration: none;
+    cursor: default;
+}

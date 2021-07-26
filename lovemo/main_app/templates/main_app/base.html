@@ -15,7 +15,11 @@
                 <a href="/home" id="home-logo">
                     <img style="vertical-align: middle; margin-right: 1325px;" id="header-image" src="{% static 'images/lovemo-logo.png' %}" alt="lovemo-logo" height="50px" width="75px">
                 </a>
-                <a href="/login" id="login-link" style="color: white;">Login</a>
+                {% if user.is_authenticated %} 
+                    <a id="user-name" style="color: white;">{{user.username}}</a>
+                {% else %}
+                    <a href="/login" id="login-link" style="color: white;">Login</a>
+                {% endif %}
               </nav>
         </div>
     </header>
