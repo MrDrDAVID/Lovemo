@@ -1,23 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Permanent+Marker&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    min-height: 75px;
-    background: rgb(248, 99, 99);
-    width: 100%;
-}
-
-#header-nav {
-    margin-top: 10px;
-}
-
 #header-image:hover {
     -webkit-transform: scale(.9);
     -ms-transform: scale(.9);
     transform: scale(.9);
+}
+
+.nav-color {
+    background-color: rgb(248, 99, 99);
 }
 
 a {
