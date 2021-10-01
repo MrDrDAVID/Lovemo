@@ -45,6 +45,7 @@ class Comments(models.Model) :
     
 
 class EarnLoviesOrBuy(models.Model) :
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     description = models.CharField(max_length=100)
     value = models.IntegerField(blank=False)
     earn_or_buy = models.CharField(max_length=4, choices=EARN_OR_BUY)
