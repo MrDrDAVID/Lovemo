@@ -34,7 +34,7 @@
         </div> -->
         <nav class="navbar nav-color">
             <div class=" container-fluid ms-3">
-              <a class="navbar-brand" href="#">
+              <a class="navbar-brand" href="/home">
                 <img id="header-image" src="{% static 'images/lovemo-logo.png' %}" alt="lovemo-logo" width="80" height="60">
               </a>
 
@@ -58,9 +58,26 @@
         </div>
     </body>
 
-    <footer>
+    <!-- <footer>
         <div id="footer">
             <p><a style="color: white;" href="/creators">Creators</a><a style="color: white;" href="/about">About</a></p> 
         </div>
-    </footer>
+    </footer> -->
+
+    <div style="position: absolute; width: 100%; bottom: 0;">
+        <div class="container">
+            <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+              <p class="col-md-4 mb-0 text-muted">© 2021 Lovemo, Inc</p>
+          
+              <a class="navbar-brand" href="/home">
+                    <img id="header-image" src="{% static 'images/lovemo-logo.png' %}" alt="lovemo-logo" width="80" height="60">
+              </a>
+          
+              <ul class="nav col-md-4 justify-content-end">
+                <li class="nav-item"><a href="/creators" class="nav-link px-2 text-muted">Creators</a></li>
+                <li class="nav-item"><a href="/about" class="nav-link px-2 text-muted">About</a></li>
+              </ul>
+            </footer>
+        </div>
+    </div>
 </html>

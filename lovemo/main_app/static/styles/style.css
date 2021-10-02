@@ -11,6 +11,7 @@
     background-color: rgb(248, 99, 99);
 }
 
+
 a {
     text-decoration: none;
     background-color: transparent;
@@ -56,21 +57,6 @@ body {
 
 #transactions a {
     text-align: left;
-}
-
-footer {  
-    position: fixed;
-    bottom: 0px;  
-    left: 0px;
-    width: 100%;  
-    background-color: rgb(248, 99, 99);
-    color: white;  
-    text-align: center;
-    display: inline-block;
-}
-
-footer a {
-    margin-right: 80px;
 }
 
 #send-lovies-btn {
