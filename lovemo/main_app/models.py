@@ -50,6 +50,7 @@ class EarnLoviesOrBuy(models.Model) :
     value = models.IntegerField(blank=False)
     earn_or_buy = models.CharField(max_length=4, choices=EARN_OR_BUY)
     completed = models.BooleanField()
+    completed_check = models.BooleanField()
 
     def __str__(self) :
         if len(self.description) > 20 :
