@@ -35,30 +35,6 @@ a:visited {
     background-color: transparent;
 }
 
-body {
-    background-color: whitesmoke;
-    margin-top: 95px;
-    text-align: center;
-}
-
-#content {
-    font-size: larger;
-    display: inline-block;
-}
-
-#transactions {
-    text-align: center;
-    background-color: lightgrey;
-    padding: 0 100px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    border-radius: 2rem;
-}
-
-#transactions a {
-    text-align: left;
-}
-
 #send-lovies-btn {
     margin-top: 10px;
     padding: 20px 60px;

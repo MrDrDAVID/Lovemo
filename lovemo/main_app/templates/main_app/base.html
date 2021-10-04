@@ -39,8 +39,19 @@
               </a>
 
               {% if user.is_authenticated %} 
-                <div class="d-flex me-3">
+                <!-- <div class="d-flex me-3">
                     <a id="user-name" style="color: white;">{{user.username}}</a>
+                </div> -->
+                <div class="dropstart d-flex me-3">
+                  <!-- <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+                    Dropdown
+                  </button> -->
+                  <a class="" id="user-name" style="color: white;" data-bs-toggle="dropdown" aria-expanded="false">{{user.username}}</a>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                    <li><p class="dropdown-item">{{user.lovies.lovie_bank}}</p></li>
+                    <li><p class="dropdown-item" type="button">{{user.boo.boo}}</p></li>
+                    <li><button class="dropdown-item" type="button">Something else here</button></li>
+                  </ul>
                 </div>
               {% else %} 
                 <div class="d-flex me-3">
@@ -53,7 +64,7 @@
     </header>
 
     <body>
-        <div id="content" name="content">
+        <div class="container">
                 {% block content %}{% endblock %}
         </div>
     </body>

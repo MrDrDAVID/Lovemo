@@ -2,13 +2,13 @@
 
 {% block content %}
     {% if user.is_authenticated %}
-        <div id="transactions" name="transactions">
-            <h2>Transactions</h2>
+        <div class="mt-5" name="transactions">
+            <h2 sty>Transactions</h2>
             {% if transactions %}
                 {% for transaction in transactions %} 
                     <div id="transaction-card">
                         {% if transaction.payment_for %} 
-                            <a href="/{{transaction.id}}"><h3>{{transaction}} for</h3></a>
+                            <a href="/{{transaction.id}}"><h3>{{transaction}}</h3></a>
                         {% else %} 
                             <a href="/{{transaction.id}}"><h3>{{transaction}}</h3></a>
                         {% endif %}
@@ -24,7 +24,9 @@
                 <h2>no transactions</h2>
             {% endif %}
         </div>
-        <a href="/create_transaction"><button id="send-lovies-btn">Send Lovies</button></a>
+        <div class="container mt-3" style="text-align: center;">
+            <a  href="/create_transaction"><button id="send-lovies-btn">Send Lovies</button></a>
+        </div>
     {% else %} 
         <h1 id="not-logged-in">You need to log in to see your lovies</h1>
     {% endif %} 
