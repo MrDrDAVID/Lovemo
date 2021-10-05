@@ -20,18 +20,6 @@
     </head>
 
     <header id="header">
-        <!-- <div id="header-nav">
-            <nav id="nav-bar">
-                <a href="/home" id="home-logo">
-                    <img style="vertical-align: middle; margin-right: 1325px;" id="header-image" src="{% static 'images/lovemo-logo.png' %}" alt="lovemo-logo" height="50px" width="75px">
-                </a>
-                {% if user.is_authenticated %} 
-                    <a id="user-name" style="color: white;">{{user.username}}</a>
-                {% else %}
-                    <a href="/login" id="login-link" style="color: white;">Login</a>
-                {% endif %}
-              </nav>
-        </div> -->
         <nav class="navbar nav-color">
             <div class=" container-fluid ms-3">
               <a class="navbar-brand" href="/home">
@@ -39,23 +27,18 @@
               </a>
 
               {% if user.is_authenticated %} 
-                <!-- <div class="d-flex me-3">
-                    <a id="user-name" style="color: white;">{{user.username}}</a>
-                </div> -->
                 <div class="dropstart d-flex me-3">
-                  <!-- <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
-                    Dropdown
-                  </button> -->
                   <a class="" id="user-name" style="color: white;" data-bs-toggle="dropdown" aria-expanded="false">{{user.username}}</a>
                   <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
                     <li><p class="dropdown-item">{{user.lovies.lovie_bank}}</p></li>
-                    <li><p class="dropdown-item" type="button">{{user.boo.boo}}</p></li>
-                    <li><button class="dropdown-item" type="button">Something else here</button></li>
+                    <li><p class="dropdown-item">{{user.boo.boo}}</p></li>
+                    <li><a class="dropdown-item" href="/logout">Logout</a></li>
                   </ul>
                 </div>
               {% else %} 
                 <div class="d-flex me-3">
-                    <a href="/login" id="login-link" style="color: white;">Login</a>
+                    <a href="/login" id="login-link" style="color: white;">Login</a> &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="/Register" id="login-link" style="color: white;">Register</a>
                 </div>  
               {% endif %}   
                 

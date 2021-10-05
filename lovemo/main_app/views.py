@@ -48,10 +48,10 @@ def create_transaction(request) :
             pay_to = lovie_form.cleaned_data['to']
             amount = lovie_form.cleaned_data['amount']
             pay_for = lovie_form.cleaned_data['description']
-            new_transaction = Transactions(payment_from='you', payment_to=pay_to, payment_for=pay_for, amount_payed=amount)
+            new_transaction = Transactions(payment_from=request.user.username, payment_to=pay_to, payment_for=pay_for, amount_payed=amount)
             new_transaction.save()
 
-            return HttpResponseRedirect('/home')
+            return HttpResponseRedirect('/')
     else :
         lovie_form = SendLovies()
 

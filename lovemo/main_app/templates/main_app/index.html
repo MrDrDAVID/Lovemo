@@ -3,23 +3,24 @@
 {% block content %}
     {% if user.is_authenticated %}
         <div class="mt-5" name="transactions">
-            <h2 sty>Transactions</h2>
             {% if transactions %}
-                {% for transaction in transactions %} 
-                    <div id="transaction-card">
-                        {% if transaction.payment_for %} 
-                            <a href="/{{transaction.id}}"><h3>{{transaction}}</h3></a>
-                        {% else %} 
-                            <a href="/{{transaction.id}}"><h3>{{transaction}}</h3></a>
-                        {% endif %}
-                        {% if transaction.payment_for|length > 150 %}
-                            <p>{{transaction.payment_for|slice:'150'}}</p>
-                        {% else %}
-                            <p>{{transaction.payment_for}}</p> 
-                        {% endif %} 
-                        <hr width="100%" align="LEFT">
-                    </div>
-                {% endfor %}
+                <div>
+                    <ul class="list-group">
+                        {% for transaction in transactions %} 
+                            
+                                {% if user.username == transaction.payment_from or user.username == transaction.payment_to %} 
+                                    {% if user.username == transaction.payment_from %}
+                                        <li class="list-group-item list-group-item-secondary">You paid {{transaction.payment_to}} {{transaction.amount_payed}} lovies</li>
+                                    {% else %} 
+                                        <li class="list-group-item list-group-item-secondary">{{transaction.payment_from}} paid you {{transaction.amount_payed}} lovies</li>
+                                    {% endif %}
+                                {% else %} 
+                                {% endif %} 
+                            
+                        {% endfor %}
+                    </ul>
+                </div>
+                
             {% else %} 
                 <h2>no transactions</h2>
             {% endif %}
