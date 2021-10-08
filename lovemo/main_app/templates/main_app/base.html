@@ -28,10 +28,10 @@
 
               {% if user.is_authenticated %} 
                 <div class="dropstart d-flex me-3">
-                  <a class="" id="user-name" style="color: white;" data-bs-toggle="dropdown" aria-expanded="false">{{user.username}}</a>
+                  <a class="" id="user-name" style="color: white; text-decoration: none;" data-bs-toggle="dropdown" aria-expanded="false">{{user.username}}</a>
                   <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                    <li><p class="dropdown-item">{{user.lovies.lovie_bank}}</p></li>
-                    <li><p class="dropdown-item">{{user.boo.boo}}</p></li>
+                    <li><p class="dropdown-item">Lovies: {{user.lovies.lovie_bank}}</p></li>
+                    <li><p class="dropdown-item">Boo: {{user.boo.boo}}</p></li>
                     <li><a class="dropdown-item" href="/logout">Logout</a></li>
                   </ul>
                 </div>

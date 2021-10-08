@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect
 from .forms import RegisterForm
 from main_app.models import Boo, Lovies
+from django.contrib.auth import logout
 
 # Create your views here.
 def register(request) :
